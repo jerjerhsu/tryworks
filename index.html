@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+    <title></title>
+    <!--css-->
+    <style type="text/css">
+        /* http://meyerweb.com/eric/tools/css/reset/ 
+           v2.0 | 20110126
+           License: none (public domain)
+        */
+        
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, 
+        figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+            font-family:"微軟正黑體",Microsoft JhengHei,Microsoft YaHei ,Century Gothic, Helvetica, Arial, Verdana, 新細明體;
+        }
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure, 
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+        body {
+            line-height: 1;
+            
+        }
+        ol, ul {
+            list-style: none;
+        }
+        blockquote, q {
+            quotes: none;
+        }
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        html {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            width: 100%;
+            height: 100%;
+        }
+        div.center_data{
+            position: relative;
+            top: 0%;
+            left: 50%;
+            width: 0px;
+            height: 0px;
+        }
+        div.center {
+            position: relative;
+            width: 880px;
+            left: -440px;
+            overflow: hidden;
+            margin-bottom: 100px;
+        }
+        div.center a {
+            text-decoration: none;
+            display: table;
+            position: relative; 
+            width: 200px;
+            height: 100px;
+            background-color: #81C7D4;
+            margin: 10px;
+            float: left;
+            border-radius: 4px;
+            -webkit-transition: all 0.4s;
+               -moz-transition: all 0.4s;
+                -ms-transition: all 0.4s;
+                    transition: all 0.4s;
+        }
+        div.center a:hover {
+            background-color: #A5DEE4;
+        }
+        div.center a p {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            font-family: "微軟正黑體",Arial;
+            letter-spacing: 4px;
+            color: #08192D;
+            line-height: 1.4;
+        }
+        div#preview {
+            position: fixed;
+            width: 0px;
+            height: 0px;
+            right: 250px;
+            overflow: hidden;
+            top: 50%;
+            margin: 0px 0px 0px 0px;
+            background-color: #FEDFE1;
+            border-radius: 50%;
+            opacity: 0; 
+            filter: alpha(opacity = 0); 
+            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+            -webkit-transition: all 0.2s;
+               -moz-transition: all 0.2s;
+                -ms-transition: all 0.2s;
+                    transition: all 0.2s;
+        }
+        div#preview.show {
+            right: 0px;
+            width: 500px;
+            height: 500px;
+            margin: -250px 0px 0px 250px;
+            opacity: 1; 
+            filter: alpha(opacity = 100); 
+            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        }
+        div#preview iframe {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -540px 0px 0px -960px;
+            -webkit-transform: scale(0.26);
+               -moz-transform: scale(0.26);
+                -ms-transform: scale(0.26);
+                    transform: scale(0.26);
+        }
+        div.jcode_icon{
+            position: relative;
+            margin-top: 50px;
+            margin-bottom: 30px;
+        }
+        div.jcode_icon img{
+            position: relative;
+            left: 10px;
+        }
+    </style>
+</head>
+<body onload="loaded()">
+    <div class="center_data">
+    <div class="center">
+
+        <div class="jcode_icon"><img src="images/jcode_icon.png" /></div>
+        <a href="../keyframes/" target="_blank">
+            <p>keyframes</p>
+        </a>
+        <a href="../angular_js_temp/jsbin.fiwinafona.1.html" target="_blank">
+            <p>angular_js_temp</p>
+        </a>
+        <a href="../answer_/" target="_blank">
+            <p>answer_</p>
+        </a>
+        <a href="../drop/" target="_blank">
+            <p>drop</p>
+        </a>
+        <a href="../typing_word/" target="_blank">
+            <p>typing_word</p>
+        </a>
+        <a href="../running_word_/" target="_blank">
+            <p>running_word_</p>
+        </a>
+        <a href="../running_word/" target="_blank">
+            <p>running_word</p>
+        </a>
+        <a href="../touch_slider/" target="_blank">
+            <p>touch_slider</p>
+        </a>
+        <a href="../sprite_calculate/" target="_blank">
+            <p>sprite_calculate</p>
+        </a>
+        <a href="../krpano/" target="_blank">
+            <p>krpano</p>
+        </a>
+        <a href="../fastclick/" target="_blank">
+            <p>fastclick</p>
+        </a>
+        <a href="../height/" target="_blank">
+            <p>height</p>
+        </a>
+        <a href="../bubble_create/" target="_blank">
+            <p>bubble_create</p>
+        </a>
+        <a href="../circle_slider/" target="_blank">
+            <p>circle_slider</p>
+        </a>
+        <a href="../sortable/" target="_blank">
+            <p>sortable</p>
+        </a>
+        <a href="../clip_test/" target="_blank">
+            <p>clip_test</p>
+        </a>
+        <a href="../background_clip/" target="_blank">
+            <p>background_clip</p>
+        </a>
+        <a href="../wobble/" target="_blank">
+            <p>wobble</p>
+        </a>
+        <a href="../balloon/" target="_blank">
+            <p>balloon</p>
+        </a>
+        <a href="../drag_width/" target="_blank">
+            <p>drag_width</p>
+        </a>
+        <a href="../disable_right_click/" target="_blank">
+            <p>disable<br/>right click</p>
+        </a>
+        <a href="../jquery_no_cookie/" target="_blank">
+            <p>jquery_no<br/>cookie</p>
+        </a>
+        <a href="../jquery_has_cookie/" target="_blank">
+            <p>jquery_has<br/>cookie</p>
+        </a>
+        <a href="../jquery_cookie/" target="_blank">
+            <p>jquery_cookie</p>
+        </a>
+        <a href="../count_to_9/" target="_blank">
+            <p>count_to_9</p>
+        </a>
+        <a href="../share/" target="_blank">
+            <p>share</p>
+        </a>
+        <a href="../parallax_animate/" target="_blank">
+            <p>parallax_animate</p>
+        </a>
+        <a href="../parallax_animate_track/" target="_blank">
+            <p>parallax_animate<br/>track</p>
+        </a>
+        <a href="../boostrap_temp/" target="_blank">
+            <p>boostrap_temp</p>
+        </a>
+        <a href="../slider_template/" target="_blank">
+            <p>slider_template</p>
+        </a>
+        <a href="../slick/" target="_blank">
+            <p>slick</p>
+        </a>
+        <a href="../OrientationEvent/" target="_blank">
+            <p>OrientationEvent</p>
+        </a>
+        <a href="../css_hover_curve/" target="_blank">
+            <p>css_hover_curve</p>
+        </a>
+        <a href="../dragPoz/index_.html" target="_blank">
+            <p>dragPoz_</p>
+        </a>
+        <a href="../dragPoz/" target="_blank">
+            <p>dragPoz</p>
+        </a>
+        <a href="../svg/" target="_blank">
+            <p>svg</p>
+        </a>
+        <a href="../multiple_text_line_ellipese/" target="_blank">
+            <p>multiple text<br/>ellipese</p>
+        </a>
+        <a href="../draw/" target="_blank">
+            <p>draw</p>
+        </a>
+        <a href="../sound_wave/" target="_blank">
+            <p>sound_wave</p>
+        </a>
+        <a href="../scroll_prevent_default/" target="_blank">
+            <p>scroll<br/>prevent default</p>
+        </a>
+        <a href="../hash_get/?utm_source=123456789#form" target="_blank">
+            <p>hash_get</p>
+        </a>
+        <a href="../ripple/" target="_blank">
+            <p>ripple</p>
+        </a>
+        <a href="../youtube_api_ready_callback/" target="_blank">
+            <p>youtube_api<br/>ready_callback</p>
+        </a>
+        <a href="../youtube_iframe_load/" target="_blank">
+            <p>youtube_iframe<br/>load</p>
+        </a>
+        <a href="../combine_word/" target="_blank">
+            <p>combine_word</p>
+        </a>
+        <a href="../wine_footer/" target="_blank">
+            <p>酒類footer</p>
+        </a>
+        <a href="../replaceWith/" target="_blank">
+            <p>replaceWith</p>
+        </a>
+        <a href="../fixed_nav_scroll/" target="_blank">
+            <p>fixed_nav_scroll</p>
+        </a>
+        <a href="../rotate_pie/" target="_blank">
+            <p>rotate_pie</p>
+        </a>
+        <a href="../ul_li_sortable/" target="_blank">
+            <p>ul_li_sortable</p>
+        </a>
+        <a href="../ul_li/" target="_blank">
+            <p>ul_li</p>
+        </a>
+        <a href="../for_setTimeout/" target="_blank">
+            <p>for_setTimeout</p>
+        </a>
+        <a href="../mowmowbug_2/" target="_blank">
+            <p>mowmowbug_2</p>
+        </a>
+        <a href="../mowmowbug/" target="_blank">
+            <p>mowmowbug</p>
+        </a>
+        <a href="../copy_and_cut/" target="_blank">
+            <p>copy_and_cut</p>
+        </a>
+        <a href="../mobile_password/" target="_blank">
+            <p>mobile<br/>password</p>
+        </a>
+        <a href="../hover_slider_css3/" target="_blank">
+            <p>hover_slider<br/>css3</p>
+        </a>
+        <a href="../json/" target="_blank">
+            <p>json</p>
+        </a>
+        <a href="../fb_login/" target="_blank">
+            <p>fb_login</p>
+        </a>
+        <a href="../menu_list/" target="_blank">
+            <p>menu_list</p>
+        </a>
+        <a href="../newDate/" target="_blank">
+            <p>newDate</p>
+        </a>
+        <a href="../draggable_droppable/" target="_blank">
+            <p>draggable</br>droppable</p>
+        </a>
+        <a href="../each/" target="_blank">
+            <p>each</p>
+        </a>
+        <a href="../contenteditable/" target="_blank">
+            <p>contenteditable</p>
+        </a>
+        <a href="../iframe_resize/" target="_blank">
+            <p>iframe_resize</p>
+        </a>
+        <a href="../video_btn/" target="_blank">
+            <p>video_btn</p>
+        </a>
+        <a href="../music_demo/" target="_blank">
+            <p>music_demo</p>
+        </a>
+        <a href="../background_position/" target="_blank">
+            <p>background</br>position</p>
+        </a>
+        <a href="../music_btn/" target="_blank">
+            <p>music_btn</p>
+        </a>
+        <a href="../images_crop/" target="_blank">
+            <p>images_crop</br>圖片裁切</p>
+        </a>
+        <a href="../format_float/" target="_blank">
+            <p>format_float</p>
+        </a>
+        <a href="../piano/" target="_blank">
+            <p>piano(手風琴效果)</p>
+        </a>
+        <a href="../hover/" target="_blank">
+            <p>hover</p>
+        </a>
+        <a href="../overflow/" target="_blank">
+            <p>overflow</p>
+        </a>
+        <a href="../stop/" target="_blank">
+            <p>stop</p>
+        </a>
+        <a href="../face_tracking/" target="_blank">
+            <p>face<br/>tracking</p>
+        </a>
+        <a href="../jQuery_datepicker/" target="_blank">
+            <p>jQuery<br/>datepicker</p>
+        </a>
+        <a href="../hover_btn/" target="_blank">
+            <p>hover_btn</p>
+        </a>
+        <a href="../prop/" target="_blank">
+            <p>prop</p>
+        </a>
+        <a href="../scrolling/" target="_blank">
+            <p>scrolling</p>
+        </a>
+        <a href="../download/" target="_blank">
+            <p>download</p>
+        </a>
+        <a href="../google_map/" target="_blank">
+            <p>google_map</p>
+        </a>
+        <a href="../google_map_api/" target="_blank">
+            <p>google_map_api</p>
+        </a>
+        <a href="../google_map_api_path/" target="_blank">
+            <p>google_map_api<br/>path</p>
+        </a>
+        <a href="../resize_frame/" target="_blank">
+            <p>resize_frame</p>
+        </a>
+        <a href="../windowtop_windowself/" target="_blank">
+            <p>windowtop<br/>windowself</p>
+        </a>
+        <a href="../fly/" target="_blank">
+            <p>fly</p>
+        </a>
+        <a href="../drag_position/" target="_blank">
+            <p>drag_position</p>
+        </a>
+        <a href="../media_tracking/" target="_blank">
+            <p>media_tracking</p>
+        </a>
+        <a href="../label/" target="_blank">
+            <p>label</p>
+        </a>
+        <a href="../transform_scale/" target="_blank">
+            <p>transform_scale</p>
+        </a>
+        <a href="../write_in/" target="_blank">
+            <p>write_in</p>
+        </a>
+        <a href="../map/" target="_blank">
+            <p>map標籤</p>
+        </a>
+        <a href="../split_url_/index.html?test=123" target="_blank">
+            <p>split_url_</p>
+        </a>
+        <a href="../split_url/index.html?test=123" target="_blank">
+            <p>split_url</p>
+        </a>
+        <a href="../qrcode_generator/" target="_blank">
+            <p>qrcode<br/>generator</p>
+        </a>
+        <a href="../line/" target="_blank">
+            <p>line</p>
+        </a>
+        <a href="../water_skate/" target="_blank">
+            <p>water_skate</p>
+        </a>
+        <a href="../fps/" target="_blank">
+            <p>fps</p>
+        </a>
+        <a href="../continue/#15002000" target="_blank">
+            <p>continue</p>
+        </a>
+        <a href="../coin/" target="_blank">
+            <p>coin</p>
+        </a>
+        <a href="../loadCount/" target="_blank">
+            <p>loadCount<br/>+<br/>orietation</p>
+        </a>
+        <a href="../fontSize/" target="_blank">
+            <p>fontSize</p>
+        </a>
+        <a href="../temp/" target="_blank">
+            <p>temp</p>
+        </a>
+        <a href="../indexOf/" target="_blank">
+            <p>indexOf</p>
+        </a>
+        <a href="../hash_scroll/" target="_blank">
+            <p>hash_scroll</p>
+        </a>
+        <a href="../height_ratio/" target="_blank">
+            <p>height_ratio</p>
+        </a>
+        <a href="../margin/" target="_blank">
+            <p>margin</p>
+        </a>
+        <a href="../queue/" target="_blank">
+            <p>queue</p>
+        </a>
+        <a href="../threejsTest/" target="_blank">
+            <p>threejsTest</p>
+        </a>
+        <a href="../display/" target="_blank">
+            <p>display</p>
+        </a>
+        <a href="../WebGL/" target="_blank">
+            <p>WebGL</p>
+        </a>
+        <a href="../analytics_url/?type=123" target="_blank">
+            <p>analytics_url</p>
+        </a>
+        <a href="../round/" target="_blank">
+            <p>round</p>
+        </a>
+        <a href="http://demo.coder.com.tw/fla/hunya/201410/recaptcha.php" target="_blank">
+            <p>ReCAPTCHA khai</p>
+        </a>
+        <a href="../center/" target="_blank">
+            <p>center</p>
+        </a>
+        <a href="../ReCAPTCHA/" target="_blank">
+            <p>ReCAPTCHA</p>
+        </a>
+        <a href="../scroll_template/" target="_blank">
+            <p>scroll_template</p>
+        </a>
+        <a href="../base_line/" target="_blank">
+            <p>base_line</p>
+        </a>
+        <a href="../iconmelon/" target="_blank">
+            <p>iconmelon</p>
+        </a>
+        <a href="../layoutViewport/" target="_blank">
+            <p>layoutViewport</p>
+        </a>
+        <a href="../screen_info/" target="_blank">
+            <p>screen_info</p>
+        </a>
+        <a href="../google_font/" target="_blank">
+            <p>google_font</p>
+        </a>
+        <a href="../off_canvas_menu/" target="_blank">
+            <p>off_canvas<br/>menu</p>
+        </a>
+        <a href="../partScale/" target="_blank">
+            <p>partScale</p>
+        </a>
+        <a href="../hammer.js-master/tests/unit/" target="_blank">
+            <p>hammer.js-master</p>
+        </a>
+        <a href="../HammerJs/" target="_blank">
+            <p>HammerJs</p>
+        </a>
+        <a href="../swipeMobile/" target="_blank">
+            <p>swipeMobile</p>
+        </a>
+        <a href="../audioAPI/" target="_blank">
+            <p>audioAPI</p>
+        </a>
+        <a href="../render/" target="_blank">
+            <p>render</p>
+        </a>
+        <a href="../creatjs/yahoo_300x250_o.html" target="_blank">
+            <p>creatjs</p>
+        </a>
+        <a href="../flipitem/" target="_blank">
+            <p>flipitem</p>
+        </a>
+        <a href="../loadXML/" target="_blank">
+            <p>loadXML</p>
+        </a>
+        <a href="../trackAnimate/" target="_blank">
+            <p>trackAnimate</p>
+        </a>
+        <a href="../cube/" target="_blank">
+            <p>cube</p>
+        </a>
+        <a href="../canvas_circle/index.html" target="_blank">
+            <p>canvas_circle</p>
+        </a>
+        <a href="../canvas_ellipse/index.html" target="_blank">
+            <p>canvas_ellipse</p>
+        </a>
+        <a href="../mycanvas/chien.html" target="_blank">
+            <p>chien</p>
+        </a>
+        <a href="../clock/" target="_blank">
+            <p>clock</p>
+        </a>
+        <a href="../curve/" target="_blank">
+            <p>curve</p>
+        </a>
+        <a href="../dragAnimate/" target="_blank">
+            <p>dragAnimate</p>
+        </a>
+        <a href="../dragCurve/" target="_blank">
+            <p>dragCurve</p>
+        </a>
+        <a href="../dragYoutube/" target="_blank">
+            <p>dragYoutube</p>
+        </a>
+        <a href="../draggable/" target="_blank">
+            <p>draggable</p>
+        </a>
+        <a href="../dom/" target="_blank">
+            <p>dom</p>
+        </a>
+        <a href="../dom_/" target="_blank">
+            <p>dom_</p>
+        </a>
+        <a href="../flip/" target="_blank">
+            <p>flip : IE Matrix</p>
+        </a>
+        <a href="../float/" target="_blank">
+            <p>float</p>
+        </a>
+        <a href="../float_big/" target="_blank">
+            <p>float_big</p>
+        </a>
+        <a href="../lightBox/" target="_blank">
+            <p>lightBox</p>
+        </a>
+        <a href="../videoFullscreen/" target="_blank">
+            <p>videoFullscreen</p>
+        </a>
+        <a href="../videojs/" target="_blank">
+            <p>videojs</p>
+        </a>
+        <a href="../youku/" target="_blank">
+            <p>youku</p>
+        </a>
+        <a href="../youtubeClick/" target="_blank">
+            <p>youtubeClick</p>
+        </a>
+        <a href="../youtubeIframe/" target="_blank">
+            <p>youtubeIframe</p>
+        </a>
+        <a href="../youtubeEvent/" target="_blank">
+            <p>youtubeEvent</p>
+        </a>
+        <a href="../twoYoutube/" target="_blank">
+            <p>twoYoutube</p>
+        </a>
+        <a href="../roundSlider/" target="_blank">
+            <p>roundSlider</p>
+        </a>
+        <a href="../youtubeSlider/" target="_blank">
+            <p>youtubeSlider</p>
+        </a>
+        <a href="../slider/" target="_blank">
+            <p>slider</p>
+        </a>
+        <a href="../circleSlider/index.html" target="_blank">
+            <p>circleSlider1</p>
+        </a>
+        <a href="../circleSlider/index2.html" target="_blank">
+            <p>circleSlider2</p>
+        </a>
+        <a href="../circleSlider/index3.html" target="_blank">
+            <p>circleSlider3</p>
+        </a>
+        <a href="../rotate/" target="_blank">
+            <p>rotate</p>
+        </a>
+        <a href="../reverse/" target="_blank">
+            <p>reverse</p>
+        </a>
+        <a href="../pureJavascript/" target="_blank">
+            <p>pureJavascript</p>
+        </a>
+        <a href="../print/" target="_blank">
+            <p>print</p>
+        </a>
+        <a href="../parallax/" target="_blank">
+            <p>parallax</p>
+        </a>
+        <a href="../parallax2/" target="_blank">
+            <p>parallax2</p>
+        </a>
+        <a href="../niceScroll/" target="_blank">
+            <p>niceScroll</p>
+        </a>
+        <a href="../nanoScroller/" target="_blank">
+            <p>nanoScroller</p>
+        </a>
+        <a href="../mycanvas/" target="_blank">
+            <p>mycanvas</p>
+        </a>
+        <a href="../scale/" target="_blank">
+            <p>scale</p>
+        </a>
+        <a href="../shake/" target="_blank">
+            <p>shake</p>
+        </a>
+        <a href="../list/" target="_blank">
+            <p>list</p>
+        </a>
+        <a href="../mobileAPP/" target="_blank">
+            <p>mobileAPP</p>
+        </a>
+        <a href="../mobileAPP_/" target="_blank">
+            <p>mobileAPP_</p>
+        </a>
+        <a href="../cssRule/" target="_blank">
+            <p>cssRule</p>
+        </a>
+        <a href="../mediaquery/" target="_blank">
+            <p>mediaquery</p>
+        </a>
+        <a href="../step/" target="_blank">
+            <p>step</p>
+        </a>
+        <a href="../text_indent/" target="_blank">
+            <p>text_indent</p>
+        </a>
+    </div>
+    </div>
+    <div id="preview"></div>
+</body>
+<script type="text/javascript">
+
+    var openPreview = false,
+        preview_once = false; 
+    if(window.location.hash=="#preview"){
+        openPreview = true;
+    }
+    function loaded () {
+        var linkItem = document.getElementsByTagName('a');
+        var preview = document.getElementById('preview');
+
+        for(var i = 0; i < linkItem.length; i++){
+            linkItem[i].onmouseenter = function(){
+                if(openPreview){
+                    preview.setAttribute('class','show');
+                    preview.innerHTML='<iframe src="http://59.124.94.43/jerjer/'+this.getAttribute('href').substring(3)+'" width="'+1920/*preview.clientWidth*/+'" height="'+1080/*preview.clientHeight*/+'"></iframe>'; 
+                }
+            }
+            linkItem[i].onmouseleave = function(){
+                preview.setAttribute('class','');
+                preview.innerHTML=''; 
+            }
+        }
+        function detect_hash () {
+            if(window.location.hash == "#preview"){
+                openPreview = true;
+            } else {
+                openPreview = false;
+            }
+        }
+        detect_hash();
+        window.onhashchange = detect_hash;
+    }
+</script>
+</html>
